@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FishSpeciesTableViewCell" id="KGk-i7-Jjw" customClass="FishSpeciesTableViewCell" customModule="Fishes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swi-6F-vzd">
+                        <rect key="frame" x="16" y="12" width="199" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-Ir-7cs">
+                        <rect key="frame" x="225" y="12" width="40" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="KIv-Kz-VGD"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="!">
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="26"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="overviewBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DFV-T4-oel"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1P-zg-qbF">
+                        <rect key="frame" x="275" y="12" width="40" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="D31-iB-qIh"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" title="?">
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="26"/>
+                            <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="sillyButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DLT-IW-WP2"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Swi-6F-vzd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6oH-Wu-Dke"/>
+                    <constraint firstAttribute="bottom" secondItem="NMl-Ir-7cs" secondAttribute="bottom" constant="12" id="7H8-s5-a6X"/>
+                    <constraint firstItem="F1P-zg-qbF" firstAttribute="leading" secondItem="NMl-Ir-7cs" secondAttribute="trailing" constant="10" id="8GU-9w-3DU"/>
+                    <constraint firstAttribute="bottom" secondItem="Swi-6F-vzd" secondAttribute="bottom" constant="12" id="ADJ-bE-1ez"/>
+                    <constraint firstItem="Swi-6F-vzd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="F4h-XG-wRX"/>
+                    <constraint firstItem="NMl-Ir-7cs" firstAttribute="leading" secondItem="Swi-6F-vzd" secondAttribute="trailing" constant="10" id="GKF-8E-ALb"/>
+                    <constraint firstItem="F1P-zg-qbF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="hQH-47-fAS"/>
+                    <constraint firstAttribute="bottom" secondItem="F1P-zg-qbF" secondAttribute="bottom" constant="12" id="lWq-sh-zwk"/>
+                    <constraint firstItem="NMl-Ir-7cs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="o0o-Bc-awp"/>
+                    <constraint firstAttribute="trailing" secondItem="F1P-zg-qbF" secondAttribute="trailing" constant="5" id="zzr-6S-0su"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="sillyButton" destination="F1P-zg-qbF" id="GF3-GK-izu"/>
+                <outlet property="titleLabel" destination="Swi-6F-vzd" id="fX7-3x-Xyo"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="80.357142857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
