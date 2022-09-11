@@ -6,6 +6,7 @@
 //
 
 import Foundation
-protocol SpeciesListNavigationProtocol : AnyObject{
+protocol SpeciesListNavigationProtocol : AnyObject {
+    func goToSpeciesListPage()
     func goToDetailsView(tappedSpecies: Species)
 }

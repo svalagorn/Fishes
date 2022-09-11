@@ -9,6 +9,14 @@
          contextName = "SpeciesDetailsViewController.viewDidAppear(_:):SpeciesDetailsViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "FishesTests.testLaunchNav():FishesTests.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController.children.last">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "SpeciesListViewModel.init(nav:apiService:):SpeciesListViewModel.swift">
       </ContextState>
       <ContextState

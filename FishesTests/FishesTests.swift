@@ -11,21 +11,26 @@ import XCTest
 class FishesTests: XCTestCase {
     var sutListVm: SpeciesListViewModel!
     var mockApiService: ApiServiceProtocol!
-    var mockCoordinataor: SpeciesListNavigationProtocol!
+    var mockCoordinator: MockCoordinator!
+    var navigationController: UINavigationController!
+
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         mockApiService = MockApiService()
-        mockCoordinataor = MockCoordinator()
+        navigationController = UINavigationController(rootViewController: UIViewController())
+        mockCoordinator = MockCoordinator(navigationController: navigationController)
         
-        sutListVm = SpeciesListViewModel(nav: mockCoordinataor, apiService: mockApiService)
+        sutListVm = SpeciesListViewModel(nav: mockCoordinator, apiService: mockApiService)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         mockApiService = nil
-        mockCoordinataor = nil
+        mockCoordinator = nil
+        navigationController = nil
+
         sutListVm = nil
         try super.tearDownWithError()
     }
@@ -47,5 +52,14 @@ class FishesTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testCoordinatorLaunch() throws {
+        mockCoordinator.launch()
+        XCTAssertTrue(mockCoordinator.wentToListView)
+    }
 
+    func testGoToDetailsView() throws {
+        sutListVm.goToDetailsView(tappedSpecies: Species(name: "Torsk", scientificName: "Torskus Fiskus", population: "n/a", images: []))
+        XCTAssertTrue(mockCoordinator.wentToDetailsView)
+    }
 }
